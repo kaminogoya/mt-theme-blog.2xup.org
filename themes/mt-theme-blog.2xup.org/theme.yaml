@@ -1,0 +1,69 @@
+id: 'mt-theme-blog.2xup.org'
+label: 'mt-theme-blog.2xup.org'
+version: 1.0
+author_link: 'http://blog.2xup.org/'
+author_name: 'Taichi Kaminogoya'
+class: 'blog'
+protected: 1
+description: 'Movable Type blog theme for blog.2xup.org'
+required_components:
+  PageNumber: 1.0
+elements:
+  template_set:
+    component: 'core'
+    importer: 'template_set'
+    data:
+      base_path: 'templates'
+      require: 1
+      templates:
+        index:
+          feed_recent:
+            label: 'Feed - Recent Entries'
+            outfile: 'atom.xml'
+            rebuild_me: 1
+          main_index:
+            label: 'Main Index'
+            outfile: index.html
+            rebuild_me: 1
+          sitemap:
+            label: 'Sitemap'
+            outfile: sitemap.xml
+            rebuild_me: 1
+        individual:
+          entry:
+            label: 'Entry'
+            mappings:
+              individual:
+                archive_type: 'Individual'
+                file_template: '%y/%m/%d%h%n%x'
+                preferred: 1
+        page:
+          page:
+            label: 'Page'
+            mappings:
+              page:
+                archive_type: 'Page'
+                preferred: 1
+        module:
+          banner_footer:
+            label: 'Banner Footer'
+          banner_header:
+            label: 'Banner Header'
+          entry_summary:
+            label: 'Entry Summary'
+          html_head:
+            label: 'HTML Head'
+          navigation:
+            label: 'Navigation'
+          pagination:
+            label: 'Pagination'
+        system:
+          dynamic_error:
+            description_label: 'Displays errors for dynamically published templates.'
+            label: 'Dynamic Error'
+          popup_image:
+            description_label: 'Displays image when user clicks a popup-linked image.'
+            label: 'Popup Image'
+          search_results:
+            description_label: 'Displays results of a search.'
+            label: 'Search Results'

@@ -1,0 +1,48 @@
+<mt:SetVarTemplate name="permalink"><$mt:BlogURL$><$mt:EntryDate format="%Y/%m/%d%H%M"></mt:SetVarTemplate>
+<!DOCTYPE html>
+<html lang="ja" itemscope itemtype="http://schema.org/Article">
+  <head>
+    <meta charset="<$mt:PublishCharset encode_html="1"$>">
+    <meta name="description" content="<$mt:EntryExcerpt remove_html="1"$>">
+    <title><$mt:EntryTitle encode_html="1"$> - <$mt:BlogName encode_html="1"$></title>
+    <$mt:Include module="<__trans phrase="HTML Head">"$>
+    <mt:EntryPrevious><link rel="prev" href="<$mt:Var name="permalink" encode_html="1"$>" title="<$mt:EntryTitle encode_html="1"$>"></mt:EntryPrevious>
+    <mt:EntryNext><link rel="next" href="<$mt:Var name="permalink" encode_html="1"$>" title="<$mt:EntryTitle encode_html="1"$>"></mt:EntryNext>
+    <link itemprop="url" href="<$mt:Var name="permalink" encode_html="1"$>">
+    <meta itemprop="description" content="<$mt:EntryExcerpt remove_html="1"$>"> 
+    <meta itemprop="image" content="<$mt:BlogURL encode_html="1"$>images/siteicon.png">
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:site_name" content="<$mt:BlogName encode_html="1"$>">
+    <meta property="og:title" content="<$mt:EntryTitle encode_html="1"$>">
+    <meta property="og:description" content="<$mt:EntryExcerpt encode_html="1"$>">
+    <meta property="og:url" content="<$mt:Var name="permalink" encode_html="1"$>">
+    <meta property="og:image" content="<$mt:BlogURL encode_html="1"$>images/siteicon.png">
+  </head>
+  <body>
+    <header role="banner">
+      <$mt:Include module="<__trans phrase="Banner Header">"$>
+    </header>
+    <div role="main">
+      <article id="entry-<$mt:EntryID$>">
+        <h2 itemprop="name"><$mt:EntryTitle$></h2>
+        <footer>
+          <p><__trans phrase="Posted on"> <time datetime="<$mt:EntryDate format_name="iso8601"$>" itemprop="datePublished"><$mt:EntryDate format="%x"$></time><mt:EntryIfTagged> <__trans phrase="in"> <mt:EntryTags glue=", "><a rel="tag" href="<$mt:BlogURL encode_html="1"$>tag/<$mt:TagName encode_html="1"$>" itemprop="keywords"><$mt:TagName$></a></mt:EntryTags></mt:EntryIfTagged></p>
+        </footer>
+        <div itemprop="articleBody">
+          <$mt:EntryBody$>
+          <$mt:EntryMore$>
+        </div>
+      </article>
+      <nav class="pagination">
+        <ul>
+          <mt:EntryPrevious><li><a rel="prev" href="<$mt:Var name="permalink" encode_html="1"$>"><__trans phrase="Previous entry"></a></li></mt:EntryPrevious>
+          <mt:EntryNext><li><a rel="next" href="<$mt:Var name="permalink" encode_html="1"$>"><__trans phrase="Next entry"></a></li></mt:EntryNext>
+        </ul>
+      </nav>
+    </div>
+    <footer role="contentinfo">
+      <$mt:Include module="<__trans phrase="Banner Footer">"$>
+    </footer>
+  </body>
+</html>

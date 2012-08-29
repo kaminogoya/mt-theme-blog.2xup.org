@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="<$mt:PublishCharset encode_html="1"$>">
+    <title><__trans phrase="Page Not Found"> - <$mt:BlogName encode_html="1"$></title>
+    <$mt:Include module="<__trans phrase="HTML Head">"$>
+  </head>
+  <body>
+    <header role="banner">
+      <$mt:Include module="<__trans phrase="Banner Header">"$>
+    </header>
+    <div role="main">
+      <section>
+        <h2><__trans phrase="Page Not Found"></h2>
+        <pre><$mt:ErrorMessage$></pre>
+      </section>
+    </div>
+    <footer role="contentinfo">
+      <$mt:Include module="<__trans phrase="Banner Footer">"$>
+    </footer>
+  </body>
+</html>

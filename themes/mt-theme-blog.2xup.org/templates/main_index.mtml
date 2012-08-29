@@ -1,0 +1,34 @@
+<$mt:Var name="entries_per_page" value="5"$>
+<!DOCTYPE html>
+<html lang="ja" itemscope itemtype="http://schema.org/WebPage">
+  <head>
+    <meta charset="<$mt:PublishCharset encode_html="1"$>">
+    <meta name="description" content="<$mt:BlogDescription encode_html="1" remove_html="1"$>">
+    <title itemprop="name"><$mt:BlogName encode_html="1"$></title>
+    <$mt:Include module="<__trans phrase="HTML Head">"$>
+    <link itemprop="url" href="<$mt:BlogURL encode_html="1"$>">
+    <meta itemprop="description" content="<$mt:BlogDescription encode_html="1" remove_html="1"$>">
+    <meta itemprop="image" content="<$mt:BlogURL encode_html$>images/siteicon.png">
+    <meta property="og:type" content="blog">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:site_name" content="<$mt:BlogName encode_html="1"$>">
+    <meta property="og:title" content="<$mt:BlogName encode_html="1"$>">
+    <meta property="og:description" content="<$mt:BlogDescription encode_html="1"$>">
+    <meta property="og:url" content="<$mt:BlogURL encode_html="1"$>">
+    <meta property="og:image" content="<$mt:BlogURL encode_html$>images/siteicon.png">
+  </head>
+  <body>
+    <header role="banner">
+      <$mt:Include module="<__trans phrase="Banner Header">"$>
+    </header>
+    <div role="main">
+<mt:Entries limit="$entries_per_page" search_results="1">
+      <$mt:Include module="<__trans phrase="Entry Summary">"$>
+</mt:Entries>
+      <$mt:Include module="<__trans phrase="Pagination">"$>
+    </div>
+    <footer role="contentinfo">
+      <$mt:Include module="<__trans phrase="Banner Footer">"$>
+    </footer>
+  </body>
+</html>

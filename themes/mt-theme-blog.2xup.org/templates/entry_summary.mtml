@@ -1,0 +1,11 @@
+<mt:SetVarTemplate name="permalink"><$mt:BlogURL$><$mt:EntryDate format="%Y/%m/%d%H%M"></mt:SetVarTemplate>
+      <section>
+        <h2><a href="<$mt:Var name="permalink" encode_html="1"$>"><$mt:EntryTitle$></a></h2>
+        <footer>
+          <p><__trans phrase="Posted on"> <time datetime="<$mt:EntryDate format_name="iso8601"$>"><$mt:EntryDate format="%x"$></time><mt:EntryIfTagged> <__trans phrase="in"> <mt:EntryTags glue=", "><a rel="tag" href="<$mt:BlogURL encode_html="1"$>tag/<$mt:TagName encode_html="1"$>"><$mt:TagName$></a></mt:EntryTags></mt:EntryIfTagged></p>
+        </footer>
+        <p><$mt:EntryExcerpt$></p>
+        <nav>
+          <a href="<$mt:Var name="permalink" encode_html="1"$>"><__trans phrase="Continue Reading"></a>
+        </nav>
+      </section>

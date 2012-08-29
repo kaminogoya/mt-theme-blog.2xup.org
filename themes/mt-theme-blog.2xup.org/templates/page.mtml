@@ -1,0 +1,31 @@
+<mt:PageIfTagged include_private="1" tag="@about"><mt:SetVar name="aboutpage" value="1"></mt:PageIfTagged>
+<!DOCTYPE html>
+<html lang="ja" itemscope itemtype="http://schema.org/<mt:If name="aboutpage">AboutPage<mt:Else>WebPage</mt:If>">
+  <head>
+    <meta charset="<$mt:PublishCharset encode_html="1"$>">
+    <meta name="description" content="<$mt:PageExcerpt remove_html="1"$>">
+    <title><$mt:PageTitle encode_html="1"$> - <$mt:BlogName encode_html="1"$></title>
+    <$mt:Include module="<__trans phrase="HTML Head">"$>
+    <link itemprop="url" href="<$mt:PagePermalink encode_html="1"$>">
+    <meta itemprop="description" content="<$mt:PageExcerpt remove_html="1"$>">
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:site_name" content="<$mt:BlogName encode_html="1"$>">
+    <meta property="og:title" content="<$mt:PageTitle encode_html="1"$> - <$mt:BlogName encode_html="1"$>">
+    <meta property="og:description" content="<$mt:PageExcerpt encode_html="1"$>">
+    <meta property="og:url" content="<$mt:PagePermalink encode_html="1"$>">
+    <meta property="og:image" content="<mt:If name="aboutpage"><mt:EntryAuthorUserpicURL size="200"><mt:Else><$mt:BlogURL encode_html$>images/siteicon.png</mt:If>">
+  </head>
+  <body>
+    <header role="banner">
+      <$mt:Include module="<__trans phrase="Banner Header">"$>
+    </header>
+    <div role="main">
+      <$mt:PageBody$>
+      <$mt:PageMore$>
+    </div>
+    <footer role="contentinfo">
+      <$mt:Include module="<__trans phrase="Banner Footer">"$>
+    </footer>
+  </body>
+</html>
