@@ -1,0 +1,18 @@
+# Movable Type blog theme for blog.2xup.org
+
+## Author
+
+* Taichi Kaminogoya
+
+## License
+
+This theme released under the GPL.
+
+## .httaccess
+
+```
+RewriteEngine on
+RewriteBase /
+RewriteRule ^([0-9]+)$ mt/mt-search.cgi?IncludeBlogs=2&template_id=[Template ID of the Main Index Template]&limit=5&archive_type=Index&page=$1[L]
+RewriteRule ^search/(.*)$ mt/mt-search.cgi?IncludeBlogs=2&search=$1[L]
+```
